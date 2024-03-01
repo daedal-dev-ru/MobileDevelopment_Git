@@ -3,11 +3,12 @@ package ru.daedal.BalanceMicroService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
-public class BalanceMicroServiceApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BalanceMicroServiceApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

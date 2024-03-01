@@ -1,11 +1,12 @@
 package ru.daedal.BalanceMicroService.exception;
 
-public class UserNotFoundException extends RuntimeException {
-    public UserNotFoundException(Long userId) {
-        super("User with id {id} is not found!".replace("{id}", String.valueOf(userId)));
-    }
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
-    public UserNotFoundException(String nickname) {
-        super("User with nickname {nickname} is not found!".replace("{nickname}", nickname));
+@ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "User not found")
+public class UserNotFoundException extends RuntimeException {
+    public UserNotFoundException(Long id) {
+        super("User with id {id} is not found!"
+                .replace("{id}", String.valueOf(id)));
     }
 }
